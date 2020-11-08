@@ -47,7 +47,7 @@ if way == "right":
     print("(Hint: Think about what the colors represent)")
     door = input("yellow, red or blue? ").lower()
     if door == "yellow":
-        print("You walk into a place like paradise. The sun is shining, birds are chirping.")
+        print("\nYou walk into a place like paradise. The sun is shining, birds are chirping.")
         print("You heard the roars of the pirates coming behind you. You start running towards the river.")
         print('''
 ****************************************    
@@ -149,6 +149,9 @@ if way == "right":
                     if movie == "shrek":
                         input("Wizard: 'You have proved yourself worthy. I have faith in you human. May all the gods be with you in your journey.'\n")
                         input("You passed the bridge. Now the pirates cannot come after you. You are safe.")
+                        input("You see something shining ahead. You get closer and closer...")
+                        input("And here it is! The treasure! You've found it!")
+                        print("Congratulations human... Seems like you were the one all along.")
                     else:
                         print("Wizard: 'You came this far... Such a shame to see you gone.'")
                         print("Wizard: 'Pirates! The human is yours.'")
