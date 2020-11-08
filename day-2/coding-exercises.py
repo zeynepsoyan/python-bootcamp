@@ -11,9 +11,9 @@ print("The sum of digits is: " + str(total))
 height = float(input("Enter your height in m: "))
 weight = float(input("Enter your weight in kg: "))
 
-bmi_index = weight / (height ** 2)
+bmi = weight / (height ** 2)
 
-print("Your BMI index is: ", round(bmi_index, 1))
+print("Your BMI index is: ", round(bmi, 1))
 
 # 3 - Life in Weeks
 
