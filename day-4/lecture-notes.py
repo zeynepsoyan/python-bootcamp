@@ -26,7 +26,9 @@ print(fruits)
 #split()
 print("A, B, C, D".split(", ")) #splits the  string according to the parameter and returns a string
 
-#nested lists
+#choice()
+print(random.choice(fruits)) #chooses a random element from a given list
 
+#nested lists
 vegetables = ["Spinach, Kale, Lettuce, Carrot"]
 dirty_dozen = [fruits, vegetables]
