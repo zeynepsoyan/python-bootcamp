@@ -11,35 +11,43 @@ def clearConsole():
         command = 'cls'
     os.system(command)
 
+def format_data(account):
+    """Takes the account data and returns the printable format."""
+    name = account['name']
+    description = account['description']
+    country = account['country']
+    return f"{name}, a(n) {description}, from {country}."
 
-def compare(a, b, guess):
-    if guess == 'A' and a['follower_count'] >= b['follower_count']:
-        return True
-    elif guess == 'B' and a['follower_count'] <= b['follower_count']:
-        return True
+def check_guess(a_followers, b_followers, guess):
+    """Takes the account followers and user guess, and returns True if the answer is correct."""
+    if a_followers >= b_followers:
+        return guess == 'a'
     else:
-        return False
+        return guess == 'b'
 
 def play_game():
 
     print(art.logo)
-    score = 0
 
+    score = 0
     is_guess_correct = True
+    b = random.choice(data)
 
     while is_guess_correct:
-        a = random.choice(data)
-        b = random.choice(data)
+
+        a, b = b, random.choice(data)
+        while a == b:
+            b = random.choice(data)
 
         print("Debug:", a['name'], a['follower_count'])
         print("Debug:", b['name'], b['follower_count'])
 
-        print(f"Compare A: {a['name']}, a(n) {a['description']}, from {a['country']}.")
+        print(f"Compare A: {format_data(a)}.")
         print(art.vs)
-        print(f"Compare B: {b['name']}, a(n) {b['description']}, from {b['country']}.")
+        print(f"Against B: {format_data(b)}.")
 
-        guess = input("Who has more followers? Type 'A' or 'B': ")
-        is_guess_correct = compare(a, b, guess)
+        guess = input("Who has more followers? Type 'A' or 'B': ").lower()
+        is_guess_correct = check_guess(a['follower_count'], b['follower_count'], guess)
 
         clearConsole()
         print(art.logo)
