@@ -1,4 +1,3 @@
-from mimetypes import init
 from turtle import Turtle, Screen
 
 STARTING_POSITIONS = [(0,0), (-20,0), (-40,0)]
